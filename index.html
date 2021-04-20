@@ -11,7 +11,7 @@
 <body>
 	<div class="post-box">
 		<div class="header">
-			<div class="profile-container">
+			<div id="profile-container">
 				<img class="profile-pic" src="profile.png">
 			</div>
 			<h2>What's on your mind?</h2>
@@ -19,17 +19,37 @@
 		<p id="content"></p>
 
 		<div id="post-container">
-			<a href="#"><img class="post-btn" src="post-btn.png"></a>
+			<img class="post-btn" src="post-btn.png">
 		</div>
 	</div>
+
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <h1>Text taken from...</h1>
+	    <p>@andymilonakis</p>
+		<p>@BarackObama</p>
+		<p>@KamalaHarris</p>
+		<p>@1kingmyles</p>
+		<p>@ChadwickBoseman</p>
+		<p>@chrisshipitv</p>
+		<p>@manwithoutatan</p>
+		<p>@BorisJohnson</p>
+		<p>@sorush_ab</p>
+		<p>@WHO</p>
+		<p>Donald Trump</p>
+		<p>Amanda Gorman</p>
+	  </div>
+
+	</div>
 <script>
-	// var str = "Congratulations to the Astronauts that left Earth today. Good choice. Kobe was a legend on the court and just getting started in what would have been just as meaningful a second act. To lose Gianna is even more heartbreaking. We did it, @JoeBiden. 😂 Two deadly viruses are killing Americans: COVID-19 and racism. Chadwick was diagnosed with stage III colon cancer in 2016, and battled with it these last 4 years as it progressed to stage IV.";
-	var str_arr = ["Congratulations","to","the","Astronauts","that","left","Earth","today.","Good","choice.","","Kobe","was","a","legend","on","the","court","and","just","getting","started","in","what","would","have","been","just","as","meaningful","a","second","act.","To","lose","Gianna","is","even","more","heartbreaking.","We","did","it,","@JoeBiden.","Two","deadly","viruses","are","killing","Americans:","COVID-19","and","racism.","Chadwick","was","diagnosed","with","stage","III","colon","cancer","in","2016,","and","battled","with","it","these","last","4","years","as","it","progressed","to","stage","IV.","We","have","therefore","made","the","assessment","that","#COVID19","can","be","characterized","as","a","pandemic.","We","intend","to","step","back","as","'senior'","members","of","the","Royal","Family","and","work","to","become","financially","independent,","while","continuing","to","fully","support","Her","Majesty","The","Queen.","More","Aussie","land","is","currently","burning","than","exists","in","the","entire","country","of","Belgium.","The","smoke","is","causing","breathing","probelms","in","New","Zealand...","Half","a","billion","animals","have","been","killed.","Eight","people","are","dead.","Today","I","have","signed","the","Withdrawal","Agreement","for","the","UK","to","leave","the","EU","on","January","31st,","honouring","the","democratic","mandate","of","the","British","people.","I","predicted","that","the","war","would","start","right","before","my","flight.","Forgive","me","for","my","good","and","bad","deeds.","Go","home.","We","love","you.","You're","very","special.","When","day","comes,","we","ask","ourselves,","where","can","we","find","light","in","this","never-ending","shade?"];
+	var str_arr = ["Congratulations","to","the","Astronauts","that","left","Earth","today.","Good","choice.","","Kobe","was","a","legend","on","the","court","and","just","getting","started","in","what","would","have","been","just","as","meaningful","a","second","act.","To","lose","Gianna","is","even","more","heartbreaking.","We","did","it,","@JoeBiden.","Two","deadly","viruses","are","killing","Americans:","COVID-19","and","racism.","Chadwick","was","diagnosed","with","stage","III","colon","cancer","in","2016,","and","battled","with","it","these","last","4","years","as","it","progressed","to","stage","IV.","We","intend","to","step","back","as","'senior'","members","of","the","Royal","Family","and","work","to","become","financially","independent,","while","continuing","to","fully","support","Her","Majesty","The","Queen.","More","Aussie","land","is","currently","burning","than","exists","in","the","entire","country","of","Belgium.","The","smoke","is","causing","breathing","problems","in","New","Zealand...","Half","a","billion","animals","have","been","killed.","Eight","people","are","dead.","Today","I","have","signed","the","Withdrawal","Agreement","for","the","UK","to","leave","the","EU","on","January","31st,","honouring","the","democratic","mandate","of","the","British","people.","I","predicted","that","the","war","would","start","right","before","my","flight.","Forgive","me","for","my","good","and","bad","deeds.","We","have","therefore","made","the","assessment","that","#COVID19","can","be","characterized","as","a","pandemic.","Go","home.","We","love","you.","You're","very","special.","When","day","comes,","we","ask","ourselves,","where","can","we","find","light","in","this","never-ending","shade?"];
 	var idx = 0;
 
 	document.body.addEventListener("keydown", function(event) {
 		var para = document.getElementById("content");
-		// para.textContent += str.charAt(idx);
 		if (idx >= str_arr.length) {
 			idx = 0;
 		}
@@ -42,6 +62,36 @@
 		var para = document.getElementById("content");
 		para.textContent = "";
 	});
+
+
+	// document.getElementById("profile-container").addEventListener("click", function(event) {
+	// });
+
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("profile-container");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on the button, open the modal
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+}
 </script>
 </body>
-</html>
+</html><p></p>
